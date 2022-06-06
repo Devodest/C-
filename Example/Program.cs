@@ -1,4 +1,6 @@
-﻿//Напишите программу, которая на вход принимает число и выдаёт его квадрат(число умноженное на само себя)
+﻿// See https://aka.ms/new-console-template for more information
+Console.WriteLine("Hello, World!");
+//Напишите программу, которая на вход принимает число и выдаёт его квадрат(число умноженное на само себя)
 
 /* Console.WriteLine("Введите число: ");
 int n = int.Parse(Console.ReadLine()); */
@@ -95,7 +97,7 @@ int n = int.Parse(Console.ReadLine());
 
 if (n > 99 && n < 1000)
 {
-    Console.WriteLine(n + " mod 10 = " + n % 10);
+    Console.WriteLine(n + " mod 10 =" + n % 10);
 } 
 else {
     Console.WriteLine("Error");
