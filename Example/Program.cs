@@ -90,7 +90,7 @@ while (i <= n) {
     i+=1;
 } */
 
-Console.WriteLine("Введите число: ");
+/* Console.WriteLine("Введите число: ");
 int n = int.Parse(Console.ReadLine());
 
 if (n > 99 && n < 1000)
@@ -99,4 +99,4 @@ if (n > 99 && n < 1000)
 } 
 else {
     Console.WriteLine("Error");
-}
+} */
