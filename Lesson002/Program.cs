@@ -30,8 +30,48 @@ else Console.WriteLine("No, mod " + a % b);
 
  */
 
- int a = new Random().Next(100, 1000);
+ /* int a = new Random().Next(100, 1000);
 
  Console.WriteLine(a);
  string str = a.ToString();
+ Console.WriteLine(str[0]);
+ Console.WriteLine(str[2]);
+ */
 
+ /* 4. Напишите программу, которая принимает на вход
+число и проверяет, кратно ли оно одновременно 7 и
+23.
+ */
+
+ /* int a = new Random().Next(100, 1000); */
+/*  int a = int.Parse(Console.ReadLine());
+ if (a % 7 == 0 && a % 23 == 0)
+ {
+     Console.WriteLine("Yes");
+ }
+ else Console.WriteLine("No"); */
+
+
+/* Задача 13: Напишите программу, которая выводит
+третью цифру заданного числа или сообщает, что третьей
+цифры нет.
+ */
+
+/* int a = int.Parse(Console.ReadLine()); */
+/* int a = new Random().Next(1, 1000000);
+Console.WriteLine(a);
+if (a < 100)
+{
+Console.WriteLine($"Нет третьего числа");
+}
+else 
+{
+    while (a >= 1000)
+    {
+        a /= 10;
+    }
+}
+Console.WriteLine(a %= 10);
+ */
+
+ 
