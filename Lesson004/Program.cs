@@ -35,7 +35,7 @@ Console.WriteLine("Количество цифр введенного числа
 */
 
 
-/* int method4(int num)
+/* int digits(int num)
 {
     int i = 0;
 
@@ -49,8 +49,7 @@ Console.WriteLine("Количество цифр введенного числа
 
 Console.WriteLine("Введите число:");
 int num = int.Parse(Console.ReadLine());
-
-Console.WriteLine(method4(num)); */
+Console.WriteLine(digits(num)); */
 
 
 /* int fact(int a)
