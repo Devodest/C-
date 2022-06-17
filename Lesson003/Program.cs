@@ -80,11 +80,12 @@ Console.WriteLine(Math.Round(distance, 2));
 5 -> 1, 4, 9, 16, 25.
 2 -> 1,4 */
 
-Console.WriteLine("Введите число N");
+/* Console.WriteLine("Введите число N");
 double N = double.Parse(Console.ReadLine());
 double i = 1;
 while (i <= N)
 {
     Console.WriteLine(Math.Pow(i,2));
     i++;
-}
+} */
+

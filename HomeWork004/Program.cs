@@ -1,4 +1,5 @@
 ﻿
+using System;
 /* Задача 25: Напишите цикл, который принимает на вход
 два числа (A и B) и возводит число A в натуральную
 степень B.
@@ -24,6 +25,8 @@ Console.WriteLine(Z); */
 82 -> 10
 9012 -> 12 */
 
+// РЕШИЛ 3 СПОСОБАМИ
+
 /* Console.WriteLine("Введите число:");
 int num = int.Parse(Console.ReadLine());
 decimal ostatok = num;
@@ -42,7 +45,7 @@ while (true)
 }
 Console.WriteLine(result); */
 
-Console.WriteLine("Введите число:");
+/* Console.WriteLine("Введите число:");
 string num = Console.ReadLine();
 int result = 0;
 
@@ -51,9 +54,58 @@ for (int i = 0; i < num.Length; i++)
     result += int.Parse(num[i].ToString());
 }
 Console.WriteLine(result);
+ */
+
+/* int sumChiselInChisle()
+{
+    Console.WriteLine("Введите число: ");
+    int x1 = int.Parse(Console.ReadLine());
+    int result = 0;
+    int temp = x1;
+    for (int i = 0; i < x1; i++)
+    {
+        result += temp % 10;
+        temp = temp / 10;
+    }
+    Console.WriteLine();
+    Console.WriteLine($"summa4isel= {result} ");
+    return result;
+}
+Console.WriteLine(sumChiselInChisle()); */
+
 
 
 /* Задача 29: Напишите программу, которая задаёт массив
 из 8 элементов и выводит их на экран.
 1, 2, 5, 7, 19 -> [1, 2, 5, 7, 19]
 6, 1, 33 -> [6, 1, 33] */
+
+
+void fillArrayToRand(int[] array)
+{
+    {
+        for (int i = 0; i < array.Length; i++)
+        {
+            array[i] = new Random().Next(1, 100);
+        }
+    }
+}
+
+void printArray(int[] array)
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (i == 0) Console.Write("[ ");
+            Console.Write($"{array[i]}, ");
+
+    }
+    Console.Write("]");
+    Console.WriteLine();
+}
+
+int[] array = new int[10];
+
+
+
+fillArrayToRand(array);
+printArray(array);
