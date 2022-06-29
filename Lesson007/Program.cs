@@ -30,22 +30,3 @@ for (int i = 0; i < mass.GetLength(0); i++)
 /* Задайте двумерный массив. Найдите элементы, у
 которых оба индекса чётные, и замените эти элементы на их
 квадраты. */
-
-
-int[] CreatRandomArray(int length)
-{
-    int[] arr = new int[length];
-    for (int i = 0; i < length; i++)
-    {
-        arr[i] = new Random().Next(1, 10);
-    }
-    return arr;
-}
-void PrintArr(int[] arr)
-{
-    for (int i = 0; i < arr.Length; i++)
-    {
-        Console.Write(arr[i] + " ");
-    }
-    Console.WriteLine();
-}
