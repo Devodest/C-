@@ -1,63 +1,9 @@
 ﻿
+using System;
 /* Задача 61:Вывести первые N строк треугольника
 Паскаля. Сделать вывод в виде равнобедренного
 треугольника */
-/* void PrintArray(int[,] array)
-{
-    for (int i = 0; i < array.GetLength(0); i++)
-    {
-        for (int j = 0; j < array.GetLength(1); j++)
-        {
-            Console.Write(array[i, j] + " ");
-        }
-        Console.WriteLine();
-    }
-}
-
-
-Console.WriteLine("Введите первые N строк треугольника");
-int n = int.Parse(Console.ReadLine());
-int[,] array = new int[n, n];
-/* int b = int.Parse(Console.ReadLine());
-int[,] array = new int[a, b];  PrintArray(array); */
-/* Console.WriteLine();
-for (int i = 0; i < n; i++)
-{
-    for (int j = 0; j < n; j++)
-    {
-        array[i, j] = 1 + j + i;
-    }
-}
-for (int i = 0; i < n; i++)
-{
-    for (int j = 0; j <= i; j++)
-    {
-        Console.Write("{0}{1}", array[i,j], "\t");
-        Console.WriteLine();
-    }
-} */
-
-/* Console.WriteLine("Введите первые N строк треугольника");
-int n = int.Parse(Console.ReadLine());
-
-for (int y = 0; y < n; y++)
-{
-    int c = 1;
-    for (int q = 0; q < n - y; q++)
-    {
-        System.Console.Write("   ");
-    }
-
-    for (int x = 0; x <= y; x++)
-    {
-        System.Console.Write("   {0:D} ", c);
-        c = c * (y - x) / (x + 1);
-    }
-    System.Console.WriteLine();
-    System.Console.WriteLine();
-}
-System.Console.WriteLine(); */
-
+/* 
 Console.WriteLine("Введите первые N строк треугольника");
 int n = int.Parse(Console.ReadLine());
 
@@ -72,13 +18,22 @@ for (int i = 0; i < n; i++)
     int c = 1;
     for (int m = 0; m <= i; m++)
     {
-        Console.Write("    {0:D}", c);
+        Console.Write("   {0:D}", c);
         c = c * (i - m) / (m + 1);
     }
     Console.WriteLine();
     Console.WriteLine();
 }
-Console.WriteLine();
+Console.WriteLine(); */
+
+/* Console.WriteLine("Введите первые N строк треугольника");
+int n = int.Parse(Console.ReadLine());
+
+for (int i = 0; i < n; i++)
+{
+     */
+
+
 
 /* Console.WriteLine(temp);
 for (int i = 0; i < array.Length; i++)
@@ -89,11 +44,81 @@ for (int i = 0; i < array.Length; i++)
 упорядочит по убыванию элементы каждой строки двумерного массива. */
 
 
+void PrintArray(int[,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            Console.Write(array[i, j] + " ");
+        }
+        Console.WriteLine();
+    }
+    Console.WriteLine();
+}
+void CreateRandomArray(int[,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            array[i, j] = new Random().Next(1, 10);
+        }
+    }
+}
+void SortInDescendeingOrder(int[,] array)
+{
+    int temp = 0;
+    for (int i = 0; i <= array.GetLength(0) - 1; i++)
+    {
+        for (int j = 0; j <= array.GetLength(1) - 1; j++)
+        {
+            for (int k = j; k <= array.GetLength(1) - 1; k++)
+            {
+                if (array[i, j] < array[i, k])
+                {
+                    temp = array[i, j];
+                    array[i, j] = array[i, k];
+                    array[i, k] = temp;
+                }
+            }
+        }
+    }
+    Console.WriteLine();
+}
+void SumAndSmallestRows(int[,] array)
+{
+    int sumRows = 0;
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            sumRows = sumRows + array[i, j];
+        }
+    }
+    Console.WriteLine(sumRows);
+    Console.WriteLine();
+}
+Console.WriteLine("Введите кол-во строк в массиве");
+int rows = int.Parse(Console.ReadLine());
+Console.WriteLine("Введите кол-во столбцов в массиве");
+int colums = int.Parse(Console.ReadLine());
+int[,] array = new int[rows, colums];
 
+/* CreateRandomArray(array);
+Console.WriteLine("Не отсортированный массив");
+PrintArray(array);
+SortInDescendeingOrder(array);
+Console.WriteLine("Отсортированный массив");
+PrintArray(array); */
 
 /* Задача 56: Задайте прямоугольный двумерный массив. Напишите
 программу, которая будет находить строку с наименьшей суммой элементов. */
 
+
+CreateRandomArray(array);
+PrintArray(array);
+SumAndSmallestRows(array);
 
 
 
