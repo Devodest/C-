@@ -6,43 +6,43 @@
 
 void PrintArr(double[] arr)
 {
-    for (double i = 0; i < arr.Length; i++)
+    for (int i = 0; i < arr.Length; i++)
     {
         Console.Write(arr[i] + " ");
     }
     Console.WriteLine();
 }
-double[] CreateRandomArray(double length)
+void CreateRandomArray(double [] arr)
 {
-    double[] arr = new double[length];
-    for (double i = 0; i < length; i++)
+    for (int i = 0; i < arr.Length; i++)
     {
         arr[i] = new Random().Next(1, 300);
     }
-    return arr;
 }
-double[] InputNumbersN(double length)
+void InputNumbersN(double [] arr)
 {
-    double[] arr = new double[length];
-
-    for (double i = 0; i < length; i++)
+    for (int i = 0; i < arr.Length; i++)
     {
         Console.Write($"Введите {i + 1} элемент массива: ");
         arr[i] = double.Parse(Console.ReadLine());
     }
-    return arr;
 }
 
 
-Console.WriteLine("Введите размер массива");
-double[] arr = InputNumbersN(double.Parse(Console.ReadLine()));
-PrintArr(arr);
+Console.WriteLine("Введите кол-во столбцов в массике");
+int n = int.Parse(Console.ReadLine());
+double[] mass = new double[n];
+CreateRandomArray(mass);
+PrintArr(mass);
+InputNumbersN(mass);
+
 double count = 0;
-for (int i = 0; i < arr.Length; i++)
+for (int i = 0; i < mass.Length; i++)
 {
-    if (arr[i] > 0)
+    if (mass[i] > 0)
     {
         count++;
     }
 }
 Console.WriteLine(count);
+
