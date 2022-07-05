@@ -1,10 +1,11 @@
 ﻿
 using System;
+Console.Clear();
 /* Задача 61:Вывести первые N строк треугольника
 Паскаля. Сделать вывод в виде равнобедренного
 треугольника */
-/* 
-Console.WriteLine("Введите первые N строк треугольника");
+
+/* Console.WriteLine("Введите первые N строк треугольника");
 int n = int.Parse(Console.ReadLine());
 
 for (int i = 0; i < n; i++)
@@ -25,6 +26,8 @@ for (int i = 0; i < n; i++)
     Console.WriteLine();
 }
 Console.WriteLine(); */
+
+
 
 /* Console.WriteLine("Введите первые N строк треугольника");
 int n = int.Parse(Console.ReadLine());
@@ -88,22 +91,58 @@ void SortInDescendeingOrder(int[,] array)
 }
 void SumAndSmallestRows(int[,] array)
 {
+    int row = 0;
     int sumRows = 0;
-    for (int i = 0; i < array.GetLength(0); i++)
+    int sumRows1 = 0;
+    for (int i = 0; i < array.GetLength(0); i++)  // проходим по строкам
     {
-        for (int j = 0; j < array.GetLength(1); j++)
+        int sumRows2 = 0;                           // Обнуляем сумму.
+        for (int j = 0; j < array.GetLength(1); j++) // проходим по столбцам
         {
-            sumRows = sumRows + array[i, j];
+            sumRows2 += array[i, j];                // Ищем сумму элементов строк
+        }
+        if (sumRows2 < sumRows1)                    // Сравниваем новую сумму элементов с предыдущей,
+        {
+            sumRows = sumRows2;                     // Если сумма элементов меньше предыдущей, то записываем сумм и строку её.
+            row = i;
+        }
+        sumRows1 = sumRows2;                        // записываем наимеьшую сумму, что бы в будущем снова её сравнить и найти самую наименьшую сумму.
+    }
+    Console.WriteLine(" Наименьшаяя сумма = {0}", sumRows);
+    Console.WriteLine(" Номер строки = {0}", row + 1);
+}
+void ProductOfTwoArray(int[,] array, int[,] array2)
+{
+    int rowMatrixArray = array.GetLength(0);
+    int columsMatrixArray = array.GetLength(1);
+    int rowMatrixArray2 = array2.GetLength(0);
+    int columsMatrixArray2 = array2.GetLength(1);
+    int temp = 0;
+    int[,] array3 = new int[rowMatrixArray, columsMatrixArray2];
+    if (columsMatrixArray != rowMatrixArray2){
+        Console.WriteLine("Матрицы не могут быть перемножены");
+    }
+    else{
+        for (int i = 0; i < rowMatrixArray; i++){
+            for (int j = 0; j < columsMatrixArray2; j++){
+                temp = 0;
+                for (int k = 0; k < columsMatrixArray; k++){
+                    temp += array[i,k] * array2[k,j];
+                }
+                array3[i,j] = temp;
+                Console.Write(array3[i, j] + " ");
+            }
+            Console.WriteLine();
         }
     }
-    Console.WriteLine(sumRows);
-    Console.WriteLine();
 }
-Console.WriteLine("Введите кол-во строк в массиве");
+
+
+/* Console.WriteLine("Введите кол-во строк в массиве");
 int rows = int.Parse(Console.ReadLine());
 Console.WriteLine("Введите кол-во столбцов в массиве");
 int colums = int.Parse(Console.ReadLine());
-int[,] array = new int[rows, colums];
+int[,] array = new int[rows, colums]; */
 
 /* CreateRandomArray(array);
 Console.WriteLine("Не отсортированный массив");
@@ -116,16 +155,33 @@ PrintArray(array); */
 программу, которая будет находить строку с наименьшей суммой элементов. */
 
 
-CreateRandomArray(array);
+/* CreateRandomArray(array);
 PrintArray(array);
 SumAndSmallestRows(array);
-
+ */
 
 
 /* Задача 58: Задайте две матрицы. Напишите программу, которая будет
 находить произведение двух матриц. */
 
 
+/* Console.WriteLine("Введите кол-во строк в массиве массиве");
+int rows = int.Parse(Console.ReadLine());
+Console.WriteLine("Введите кол-во столбцов в массиве массиве");
+int colums = int.Parse(Console.ReadLine());
+Console.WriteLine();
+Console.WriteLine("1 матрица");
+int[,] array = new int[rows, colums];
+CreateRandomArray(array);
+PrintArray(array);
+Console.WriteLine();
+Console.WriteLine("2 матрица");
+int[,] array2 = new int[colums, rows];
+CreateRandomArray(array2);
+PrintArray(array2);
+int[,] array3 = new int[rows, rows];
+Console.WriteLine("Результат перемножения матриц");
+ProductOfTwoArray(array, array2); */
 
 
 
